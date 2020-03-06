@@ -23,7 +23,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TestActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-/////////////////  wow it works //////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.Retrofit.BaseUrl;
 import com.example.myapplication.admin.UserProbPojo.OurretrofitForUserPb;
 import com.example.myapplication.admin.UserProbPojo.PbPojo;
@@ -47,6 +48,7 @@ public class UserDescription extends Fragment {
     EditText userPb;
     private Uri imageUri;
     static final int REQUEST_IMAGE_CAPTURE_gallery = 1;
+
     public UserDescription() {
         // Required empty public constructor
     }
@@ -150,6 +152,7 @@ public class UserDescription extends Fragment {
 
             imageUri = data.getData();
             Picasso.with(getContext()).load(imageUri).into(imageButton);
+            // Glide.with(getContext()).load(imageUri).into(imageButton);
         }
         if (requestCode == REQUEST_IMAGE_CAPTURE) {
             photo = (Bitmap) data.getExtras().get("data");

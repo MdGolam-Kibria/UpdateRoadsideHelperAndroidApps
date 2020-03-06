@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
     tools:context=".UserDescription">
 
     <ImageButton
@@ -26,29 +28,32 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="Gallery"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#2DC931"></Button>
+        android:textAllCaps="false"
+        android:textColor="#4D5151" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
 
         <EditText
             android:id="@+id/userPb"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_margin="10dp"
-            android:background="@drawable/bid_btn_design"
+            android:background="@drawable/foredittext"
             android:hint="Write your problems"
             android:paddingLeft="10dp"
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#27AE2A"
-            android:textColorHint="#2DC931"
+            android:textColor="#4D5151"
+            android:textColorHint="#4D5151"
 
             tools:ignore="RtlCompat" />
-    </com.google.android.material.textfield.TextInputLayout>
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>>
 
     <Button
         android:id="@+id/submit"
@@ -56,12 +61,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:background="@drawable/bid_btn_design"
+        android:background="@drawable/forbtn"
+        android:textAllCaps="false"
         android:paddingLeft="80dp"
         android:paddingRight="80dp"
-        android:text="Save Data"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#2DC931" />
+        android:text="Submit"
+         android:textColor="#4D5151" />
 
     <Button
         android:id="@+id/show"
@@ -69,10 +74,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:background="@drawable/bid_btn_design"
+        android:background="@drawable/forbtn"
         android:paddingLeft="80dp"
+        android:textAllCaps="false"
         android:paddingRight="80dp"
-        android:text="Show Image"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#2DC931" />
+        android:text="Show Problem"
+         android:textColor="#4D5151" />
 </LinearLayout>

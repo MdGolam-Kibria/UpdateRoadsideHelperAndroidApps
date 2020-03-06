@@ -26,6 +26,7 @@ import com.example.myapplication.problemShowToServiceProviders.ShowUserAllProble
 import com.example.myapplication.serviceProviderCheck.ProvidersCheckInterface;
 import com.example.myapplication.serviceProviderCheck.ServicePojo;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,6 +41,7 @@ public class Snd extends Fragment {
     Button login, admin, test;
     LinearLayout resister;
     EditText email, password;
+    CircleImageView circleImageView;
 
     public Snd() {
         // Required empty public constructor
@@ -51,6 +53,7 @@ public class Snd extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_snd, container, false);
+        circleImageView = view.findViewById(R.id.circleImage);
         admin = view.findViewById(R.id.admin);
         login = view.findViewById(R.id.login);
         resister = view.findViewById(R.id.resister);

@@ -46,6 +46,7 @@ public class SignupBottomSHeetFragment extends BottomSheetDialogFragment {
         phone = view.findViewById(R.id.phone);
         password = view.findViewById(R.id.password);
         location = view.findViewById(R.id.location);
+
         radioGroup = view.findViewById(R.id.radioGroupID);
         signup = view.findViewById(R.id.signupBtn);
 

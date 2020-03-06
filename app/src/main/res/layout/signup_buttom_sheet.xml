@@ -14,9 +14,9 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:text="Registration page"
+        android:text="Resistor"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#12C519"
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
     <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
@@ -24,17 +24,20 @@
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        app:borderColor="#008577"
-
-        app:borderWidth="2dp"
-        app:cornerRadius="2dp">
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
 
         <EditText
             android:id="@+id/name"
+            android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#92000000"
-            android:textColorHint="#2DC931"
+            android:paddingTop="5dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:textColorHint="#4D5151"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/foredittext"
             android:hint="Name"
@@ -47,19 +50,22 @@
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        app:borderColor="#008577"
-        app:borderWidth="2dp"
-        app:cornerRadius="2dp">
+        app:borderColor="#4D5151"
+        android:layout_marginTop="10dp"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
 
         <EditText
             android:id="@+id/email"
+            android:imeOptions="actionNext"
             android:layout_width="match_parent"
+            android:paddingLeft="10dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/foredittext"
             android:hint="Email"
             android:backgroundTint="#92000000"
-            android:textColorHint="#2DC931"
+            android:textColorHint="#4D5151"
             android:paddingTop="5dp"
 
             android:paddingBottom="5dp" />
@@ -70,12 +76,14 @@
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        app:borderColor="#008577"
-        app:borderWidth="2dp"
-        app:cornerRadius="2dp">
+        android:layout_marginTop="10dp"
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
 
         <EditText
             android:id="@+id/phone"
+            android:imeOptions="actionNext"
             android:layout_width="300dp"
             android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content"
@@ -83,7 +91,7 @@
             android:hint="Phone"
             android:paddingLeft="10dp"
             android:backgroundTint="#92000000"
-            android:textColorHint="#2DC931"
+            android:textColorHint="#4D5151"
              android:paddingTop="5dp"
             android:paddingBottom="5dp" />
     </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
@@ -93,19 +101,22 @@
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        app:borderColor="#008577"
-        app:borderWidth="2dp"
-        app:cornerRadius="2dp">
+        android:layout_marginTop="10dp"
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
 
         <EditText
             android:id="@+id/password"
+            android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/foredittext"
+            android:paddingLeft="10dp"
             android:hint="password"
             android:backgroundTint="#92000000"
-            android:textColorHint="#2DC931"
+            android:textColorHint="#4D5151"
             android:paddingTop="5dp"
             android:paddingBottom="5dp" />
     </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
@@ -116,13 +127,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:text="Type : "
+        android:layout_marginTop="10dp"
         android:textSize="18dp"
-        android:textColor="#009688"
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
         android:orientation="horizontal">
 
@@ -138,7 +151,7 @@
                 android:checked="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#2DC931"
+                android:textColor="#4D5151"
                 android:backgroundTint="#92000000"
                 android:text="User"
                 android:textSize="10dp" />
@@ -147,7 +160,7 @@
                 android:id="@+id/serviceProvider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#2DC931"
+                android:textColor="#4D5151"
                 android:backgroundTint="#92000000"
 
                  android:text="Service provider"
@@ -163,30 +176,34 @@
         android:layout_marginLeft="10dp"
         android:text="Select location : "
         android:textSize="18dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:textColor="#009688" />
+        android:textColor="@color/black" />
 
     <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
         android:layout_width="300dp"
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        app:borderColor="#008577"
-        app:borderWidth="2dp"
-        app:cornerRadius="2dp">
+        android:layout_marginTop="10dp"
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
 
         <EditText
             android:id="@+id/location"
+            android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
             android:hint="Location"
             android:background="@drawable/foredittext"
             android:drawableRight="@drawable/btnarrow"
             android:backgroundTint="#92000000"
-            android:textColorHint="#2DC931"
+            android:textColorHint="#4D5151"
             android:paddingTop="5dp"
             android:paddingRight="5dp"
             android:paddingBottom="5dp" />
