@@ -82,17 +82,18 @@ public class ShowUserAllProblems extends Fragment {
         recyclerViewpb.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerViewpb, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
+                AlertDialogPanel alertDialogPanel = new AlertDialogPanel();
+                alertDialogPanel.showAlertDialog(position, body, getContext());
 
 //                Movie movie = body.get(position);
-                ShareProblemToServiceProviders movie = body.get(position);
-                Toast.makeText(getContext(), movie.getProblemDescription() + " is selected!", Toast.LENGTH_SHORT).show();
+              //  ShareProblemToServiceProviders movie = body.get(position);
+              //  Toast.makeText(getContext(), movie.getProblemDescription() + " is selected!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onLongClick(View view, int position) {//
                 Toast.makeText(getContext(), "long click on  " + body.get(position).getProblemDescription(), Toast.LENGTH_LONG).show();
-                AlertDialogPanel alertDialogPanel = new AlertDialogPanel();
-                alertDialogPanel.showAlertDialog(position, body, getContext());
+
                 //showAlertDialog(position,body);
             }
         }));

@@ -46,7 +46,7 @@ public class AlertDialogPanel {
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
-                Toast.makeText(context, "mck", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Cancel", Toast.LENGTH_SHORT).show();
             }
         });
     }
