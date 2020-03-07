@@ -96,7 +96,6 @@ public class Snd extends Fragment {
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.containear, new AfterLogin(), "afterLogin").addToBackStack(null).commit();
-//////////////////
                 }
                 forAdmin();//first working with admin else other service check
                 forServiceProvider();
@@ -209,7 +208,7 @@ public class Snd extends Fragment {
 
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.containear,new ShowUserAllProblems(),"afterLogin").addToBackStack(null).commit();
+            fragmentTransaction.replace(R.id.containear, new ShowUserAllProblems(), "afterLogin").addToBackStack(null).commit();
         } else {
             Toast.makeText(getContext(), "No ServiceProviders found", Toast.LENGTH_LONG).show();
         }

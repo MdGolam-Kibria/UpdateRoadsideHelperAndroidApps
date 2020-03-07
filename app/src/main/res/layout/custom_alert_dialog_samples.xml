@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Write your possible Prize"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/alertImageSample"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_house"
+        app:civ_border_color="#4D5151"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135"
+        tools:ignore="MissingConstraints" />
+
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:id="@+id/edit"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:hint="Write your prize"
+        android:padding="16dp"
+        app:borderColor="#4D5151"
+        app:borderWidth="1dp"
+        app:cornerRadius="15dp">
+
+        <EditText
+            android:id="@+id/costEditText"
+            android:layout_width="196dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/foredittext"
+            android:backgroundTint="#92000000"
+            android:hint="Write your possible prize here."
+            android:paddingLeft="10dp"
+            android:textColorHint="#4D5151" />
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/forbtn"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:scrollHorizontally="true"
+            android:text="Send"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/forbtn"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:scrollHorizontally="true"
+            android:text="cancel"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,12 +1,16 @@
 package com.example.myapplication.problemShowToServiceProviders;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Movie;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.Retrofit.BaseUrl;
+import com.example.myapplication.Test.JsonImageConvert;
+import com.example.myapplication.alertDialogPanel.AlertDialogPanel;
 import com.example.myapplication.recyclerViewClickAndDeviderHundle.MyRecyclerViewDividerItemDecoration;
 import com.example.myapplication.recyclerViewClickAndDeviderHundle.RecyclerTouchListener;
 import com.example.myapplication.showUserProblemstoServiceProviders.CustomSharPbToServiceProvidersAdapter;
@@ -23,6 +29,7 @@ import com.example.myapplication.showUserProblemstoServiceProviders.ShareProblem
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,6 +41,7 @@ public class ShowUserAllProblems extends Fragment {
 
     private RecyclerView recyclerViewpb;
     private List<Movie> movieList = new ArrayList<>();
+
     public ShowUserAllProblems() {
         // Required empty public constructor
     }
@@ -42,7 +50,7 @@ public class ShowUserAllProblems extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_show_user_all_problems, container, false);
+        View view = inflater.inflate(R.layout.fragment_show_user_all_problems, container, false);
         recyclerViewpb = view.findViewById(R.id.recyclerViewForShowAllProblemsss);
         recyclerViewpb.setHasFixedSize(true);
         recyclerViewpb.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -66,13 +74,13 @@ public class ShowUserAllProblems extends Fragment {
         });
         return view;
     }
+
     private void showIt(final List<ShareProblemToServiceProviders> body) {
-        CustomSharPbToServiceProvidersAdapter custom  = new CustomSharPbToServiceProvidersAdapter(body,getContext());
+        CustomSharPbToServiceProvidersAdapter custom = new CustomSharPbToServiceProvidersAdapter(body, getContext());
         recyclerViewpb.addItemDecoration(new MyRecyclerViewDividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL, 16));
-        // above parameters for recycler view devider style class this copy from google link below
-        //https://www.androidhive.info/2016/01/android-working-with-recycler-view/
+
         recyclerViewpb.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerViewpb, new RecyclerTouchListener.ClickListener() {
-             @Override
+            @Override
             public void onClick(View view, int position) {
 
 //                Movie movie = body.get(position);
@@ -82,9 +90,13 @@ public class ShowUserAllProblems extends Fragment {
 
             @Override
             public void onLongClick(View view, int position) {//
-                Toast.makeText(getContext(), "long click on  "+body.get(position).getProblemDescription(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "long click on  " + body.get(position).getProblemDescription(), Toast.LENGTH_LONG).show();
+                AlertDialogPanel alertDialogPanel = new AlertDialogPanel();
+                alertDialogPanel.showAlertDialog(position, body, getContext());
+                //showAlertDialog(position,body);
             }
         }));
         recyclerViewpb.setAdapter(custom);
     }
 }
+

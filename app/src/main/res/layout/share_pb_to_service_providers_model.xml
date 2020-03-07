@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="155dp"
     android:background="#FFFFFF"
     android:orientation="horizontal">
 
@@ -21,25 +21,24 @@
 
     <TextView
         android:id="@+id/pbDescrip"
-        android:layout_width="68dp"
-        android:layout_height="22dp"
-        android:textColor="@color/black"
+        android:layout_width="191dp"
+        android:layout_height="132dp"
         android:layout_gravity="top"
-        android:layout_marginEnd="224dp"
-        android:layout_marginRight="224dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
         android:text="@android:string/copyUrl"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/bidBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:text="Bid"
+         android:text="Bid"
         android:background="@drawable/bid_btn_design"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
