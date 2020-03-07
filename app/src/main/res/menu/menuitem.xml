@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dhanmondi"
+        android:title="Dhanmondi" />
+    <item
+        android:id="@+id/mohammadpur"
+        android:title="Mohammadpur" />
+    <item
+        android:id="@+id/gulshan"
+        android:title="Gulshan " />
+    <item
+        android:id="@+id/hazaribagh"
+        android:title="Hazaribagh" />
+    <item
+        android:id="@+id/uttara"
+        android:title="Uttara" />
+    <item
+        android:id="@+id/badda"
+        android:title="Badda" />
+    <item
+        android:id="@+id/rampura"
+        android:title="Rampura" />
+    <item
+        android:id="@+id/kalabagan"
+        android:title="Kalabagan" />
+
+</menu>

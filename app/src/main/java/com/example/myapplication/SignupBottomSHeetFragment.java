@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -49,7 +52,12 @@ public class SignupBottomSHeetFragment extends BottomSheetDialogFragment {
 
         radioGroup = view.findViewById(R.id.radioGroupID);
         signup = view.findViewById(R.id.signupBtn);
-
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                menu();
+            }
+        });
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +111,7 @@ public class SignupBottomSHeetFragment extends BottomSheetDialogFragment {
                     return;
                 }
 
-                if (userType.equals("User")){
+                if (userType.equals("User")) {
                     //registration user input check
                     try {
                         Retrofit retrofit = new Retrofit.Builder()
@@ -143,7 +151,8 @@ public class SignupBottomSHeetFragment extends BottomSheetDialogFragment {
                     } catch (Exception e) {
                         Toast.makeText(getContext(), "" + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
-                }if (userType.equals("Service provider")){
+                }
+                if (userType.equals("Service provider")) {
 
                     Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl(BaseUrl.BASE_URL)
@@ -151,7 +160,7 @@ public class SignupBottomSHeetFragment extends BottomSheetDialogFragment {
                     OurRetroft ourRetroft = retrofit.create(OurRetroft.class);
                     ServicePojo servicePojo = new ServicePojo(userName, userEmail, userPhone, userPassword, userType, userLocation);
 
-                    Call<ServicePojo> servicePojoCall =  ourRetroft.postServiceProviderData(servicePojo );
+                    Call<ServicePojo> servicePojoCall = ourRetroft.postServiceProviderData(servicePojo);
                     servicePojoCall.enqueue(new Callback<ServicePojo>() {
                         @Override
                         public void onResponse(Call<ServicePojo> call, Response<ServicePojo> response) {
@@ -184,6 +193,21 @@ public class SignupBottomSHeetFragment extends BottomSheetDialogFragment {
         });
 
         return view;
+    }
+
+    private void menu() {
+        PopupMenu popupMenu = new PopupMenu(getContext(), location);
+        popupMenu.getMenuInflater().inflate(R.menu.menuitem, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                    location.setText(item.getTitle());
+
+                return false;
+            }
+        });
+        popupMenu.show();
     }
 
 
