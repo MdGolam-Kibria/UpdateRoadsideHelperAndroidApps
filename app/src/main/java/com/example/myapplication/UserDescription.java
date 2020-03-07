@@ -25,6 +25,7 @@ import com.bumptech.glide.Glide;
 import com.example.myapplication.Retrofit.BaseUrl;
 import com.example.myapplication.admin.UserProbPojo.OurretrofitForUserPb;
 import com.example.myapplication.admin.UserProbPojo.PbPojo;
+import com.example.myapplication.alertDialogPanel.AlertDialogPanel;
 import com.example.myapplication.probImageAndPbView.ShowPbImage;
 import com.squareup.picasso.Picasso;
 
@@ -71,7 +72,6 @@ public class UserDescription extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "wow", Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -88,38 +88,9 @@ public class UserDescription extends Fragment {
                     userPb.requestFocus();
                     return;
                 }
-
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                photo.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte[] byteArray = stream.toByteArray();
-//                pbPojo.setProblemImage(byteArray);
-//                pbPojo.setProblemDescription(userProblems);
-
-
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(BaseUrl.BASE_URL)
-                        .addConverterFactory(GsonConverterFactory.create()).build();
-
-                OurretrofitForUserPb ourretrofitForUserPb = retrofit.create(OurretrofitForUserPb.class);
-                PbPojo pbPojo = new PbPojo(byteArray, userProblems);
-                Call<PbPojo> modelCall = ourretrofitForUserPb.postData(pbPojo);
-                modelCall.enqueue(new Callback<PbPojo>() {
-                    @Override
-                    public void onResponse(Call<PbPojo> call, Response<PbPojo> response) {
-                        if (response.isSuccessful()) {
-                            Toast.makeText(getContext(), "wow response", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(getContext(), "field to sed problems to your database", Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<PbPojo> call, Throwable t) {
-
-                    }
-                });
-
-
+                new AlertDialogPanel().sampleAlertDialog(getContext(),userProblems,photo);
+//                AlertDialogPanel alertDialogPanel = new AlertDialogPanel();
+//                alertDialogPanel.sampleAlertDialog(getContext(),userProblems,userPb,photo);
             }
         });
         show.setOnClickListener(new View.OnClickListener() {
@@ -156,7 +127,6 @@ public class UserDescription extends Fragment {
         }
         if (requestCode == REQUEST_IMAGE_CAPTURE) {
             photo = (Bitmap) data.getExtras().get("data");
-
             imageButton.setImageBitmap(photo);
         }
     }
