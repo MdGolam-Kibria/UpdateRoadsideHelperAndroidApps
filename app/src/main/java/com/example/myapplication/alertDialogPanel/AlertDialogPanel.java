@@ -26,7 +26,7 @@ public class AlertDialogPanel {
         JsonImageConvert jsonImageConvert = new JsonImageConvert();
         Bitmap bitmap = jsonImageConvert.jsonimageConvertTOBitmap(body.get(position).getProblemImage());
         image.setImageBitmap(bitmap);
-        final Button ok = view1.findViewById(R.id.ok);
+        final Button send = view1.findViewById(R.id.ok);
         final Button cancel = view1.findViewById(R.id.cancel);
 
         builder.setView(view1);
@@ -34,7 +34,7 @@ public class AlertDialogPanel {
         final AlertDialog alertDialog = builder.create();
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
-        ok.setOnClickListener(new View.OnClickListener() {
+        send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //              Intent intent = new Intent(getContext().this, Main2Activity.class);
