@@ -195,6 +195,8 @@ public class SignupBottomSHeetFragment extends BottomSheetDialogFragment {
         return view;
     }
 
+
+
     private void menu() {
         PopupMenu popupMenu = new PopupMenu(getContext(), location);
         popupMenu.getMenuInflater().inflate(R.menu.menuitem, popupMenu.getMenu());

@@ -30,7 +30,7 @@ public class CustomAdapter extends RecyclerView.Adapter<ViewHolderData> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderData holder, int position) {
-      PojoClass currentData = list.get(position);
+        PojoClass currentData = list.get(position);
         holder.id.setText(currentData.getUserId());
         holder.name.setText(currentData.getUserName());
         holder.email.setText(currentData.getUserEmail());
