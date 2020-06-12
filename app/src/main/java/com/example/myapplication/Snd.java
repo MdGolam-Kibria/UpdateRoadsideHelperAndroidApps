@@ -92,7 +92,7 @@ public class Snd extends Fragment {
                     password.requestFocus();
                     return;
                 }
-                if (userEmail.equals("golamkibria.java@gmail.com") && userPassword.equals("413152413152")) {
+                if (userEmail.equals("golamkibria.java@gmail.com") && userPassword.equals("413152")) {
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.containear, new AfterLogin(), "afterLogin").addToBackStack(null).commit();
